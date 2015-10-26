@@ -13,9 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    //MARK: - - 程序启动时执行
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        window    = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.backgroundColor    = UIColor.whiteColor()
+        window?.rootViewController = ViewController()
+        window?.makeKeyAndVisible()
         return true
     }
 
