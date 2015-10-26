@@ -13,11 +13,11 @@
 		BF2C6CAD1BDDB8C200286AC7 /* tab_shopping@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2C6CA71BDDB8C200286AC7 /* tab_shopping@2x.png */; };
 		BF2C6CAE1BDDB8C200286AC7 /* tab_user_pre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2C6CA81BDDB8C200286AC7 /* tab_user_pre@2x.png */; };
 		BF2C6CAF1BDDB8C200286AC7 /* tab_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2C6CA91BDDB8C200286AC7 /* tab_user@2x.png */; };
-		BF4898D51BDB229F005B479C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4898D41BDB229F005B479C /* AppDelegate.swift */; };
-		BF4898D71BDB229F005B479C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4898D61BDB229F005B479C /* ViewController.swift */; };
 		BF4898DC1BDB229F005B479C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF4898DB1BDB229F005B479C /* Assets.xcassets */; };
 		BF4898EA1BDB22A0005B479C /* AntiqueMarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4898E91BDB22A0005B479C /* AntiqueMarketTests.swift */; };
 		BF4898F51BDB22A0005B479C /* AntiqueMarketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4898F41BDB22A0005B479C /* AntiqueMarketUITests.swift */; };
+		BF493C081BDDBA1D00BA9259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF493C071BDDBA1D00BA9259 /* AppDelegate.swift */; };
+		BF493C0A1BDDBA2800BA9259 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF493C091BDDBA2800BA9259 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +45,6 @@
 		BF2C6CA81BDDB8C200286AC7 /* tab_user_pre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_user_pre@2x.png"; sourceTree = "<group>"; };
 		BF2C6CA91BDDB8C200286AC7 /* tab_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_user@2x.png"; sourceTree = "<group>"; };
 		BF4898D11BDB229F005B479C /* AntiqueMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AntiqueMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF4898D41BDB229F005B479C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
-		BF4898D61BDB229F005B479C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		BF4898DB1BDB229F005B479C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF4898E01BDB229F005B479C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF4898E51BDB22A0005B479C /* AntiqueMarketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AntiqueMarketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +53,8 @@
 		BF4898F01BDB22A0005B479C /* AntiqueMarketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AntiqueMarketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4898F41BDB22A0005B479C /* AntiqueMarketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiqueMarketUITests.swift; sourceTree = "<group>"; };
 		BF4898F61BDB22A0005B479C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF493C071BDDBA1D00BA9259 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF493C091BDDBA2800BA9259 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 		BF2C6C9D1BDDB38D00286AC7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				BF4898D61BDB229F005B479C /* ViewController.swift */,
+				BF493C091BDDBA2800BA9259 /* ViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 		BF2C6C9E1BDDB39800286AC7 /* PublicFile */ = {
 			isa = PBXGroup;
 			children = (
-				BF4898D41BDB229F005B479C /* AppDelegate.swift */,
+				BF493C071BDDBA1D00BA9259 /* AppDelegate.swift */,
 			);
 			path = PublicFile;
 			sourceTree = "<group>";
@@ -328,8 +328,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF4898D71BDB229F005B479C /* ViewController.swift in Sources */,
-				BF4898D51BDB229F005B479C /* AppDelegate.swift in Sources */,
+				BF493C0A1BDDBA2800BA9259 /* ViewController.swift in Sources */,
+				BF493C081BDDBA1D00BA9259 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,10 +450,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AntiqueMarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.super.AntiqueMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -461,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AntiqueMarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.super.AntiqueMarket;
