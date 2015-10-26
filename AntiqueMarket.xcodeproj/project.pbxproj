@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2C6CAA1BDDB8C200286AC7 /* tab_home_pre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2C6CA41BDDB8C200286AC7 /* tab_home_pre@2x.png */; };
+		BF2C6CAB1BDDB8C200286AC7 /* tab_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2C6CA51BDDB8C200286AC7 /* tab_home@2x.png */; };
+		BF2C6CAC1BDDB8C200286AC7 /* tab_shopping_pre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2C6CA61BDDB8C200286AC7 /* tab_shopping_pre@2x.png */; };
+		BF2C6CAD1BDDB8C200286AC7 /* tab_shopping@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2C6CA71BDDB8C200286AC7 /* tab_shopping@2x.png */; };
+		BF2C6CAE1BDDB8C200286AC7 /* tab_user_pre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2C6CA81BDDB8C200286AC7 /* tab_user_pre@2x.png */; };
+		BF2C6CAF1BDDB8C200286AC7 /* tab_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2C6CA91BDDB8C200286AC7 /* tab_user@2x.png */; };
 		BF4898D51BDB229F005B479C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4898D41BDB229F005B479C /* AppDelegate.swift */; };
 		BF4898D71BDB229F005B479C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4898D61BDB229F005B479C /* ViewController.swift */; };
 		BF4898DC1BDB229F005B479C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF4898DB1BDB229F005B479C /* Assets.xcassets */; };
@@ -32,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF2C6CA41BDDB8C200286AC7 /* tab_home_pre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_home_pre@2x.png"; sourceTree = "<group>"; };
+		BF2C6CA51BDDB8C200286AC7 /* tab_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_home@2x.png"; sourceTree = "<group>"; };
+		BF2C6CA61BDDB8C200286AC7 /* tab_shopping_pre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_shopping_pre@2x.png"; sourceTree = "<group>"; };
+		BF2C6CA71BDDB8C200286AC7 /* tab_shopping@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_shopping@2x.png"; sourceTree = "<group>"; };
+		BF2C6CA81BDDB8C200286AC7 /* tab_user_pre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_user_pre@2x.png"; sourceTree = "<group>"; };
+		BF2C6CA91BDDB8C200286AC7 /* tab_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_user@2x.png"; sourceTree = "<group>"; };
 		BF4898D11BDB229F005B479C /* AntiqueMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AntiqueMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4898D41BDB229F005B479C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		BF4898D61BDB229F005B479C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +110,12 @@
 		BF2C6CA01BDDB3A300286AC7 /* 2x */ = {
 			isa = PBXGroup;
 			children = (
+				BF2C6CA41BDDB8C200286AC7 /* tab_home_pre@2x.png */,
+				BF2C6CA51BDDB8C200286AC7 /* tab_home@2x.png */,
+				BF2C6CA61BDDB8C200286AC7 /* tab_shopping_pre@2x.png */,
+				BF2C6CA71BDDB8C200286AC7 /* tab_shopping@2x.png */,
+				BF2C6CA81BDDB8C200286AC7 /* tab_user_pre@2x.png */,
+				BF2C6CA91BDDB8C200286AC7 /* tab_user@2x.png */,
 			);
 			path = 2x;
 			sourceTree = "<group>";
@@ -279,7 +297,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2C6CAF1BDDB8C200286AC7 /* tab_user@2x.png in Resources */,
+				BF2C6CAC1BDDB8C200286AC7 /* tab_shopping_pre@2x.png in Resources */,
 				BF4898DC1BDB229F005B479C /* Assets.xcassets in Resources */,
+				BF2C6CAB1BDDB8C200286AC7 /* tab_home@2x.png in Resources */,
+				BF2C6CAA1BDDB8C200286AC7 /* tab_home_pre@2x.png in Resources */,
+				BF2C6CAD1BDDB8C200286AC7 /* tab_shopping@2x.png in Resources */,
+				BF2C6CAE1BDDB8C200286AC7 /* tab_user_pre@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
