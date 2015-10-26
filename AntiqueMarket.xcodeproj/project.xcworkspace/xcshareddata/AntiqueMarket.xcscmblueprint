@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DB389B50F73DED96964327D67F805090CC6F17E5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DB389B50F73DED96964327D67F805090CC6F17E5" : 0,
+    "5D65C2D69E3E7585027C79BE07807FB35BA0D672" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "20F67DB6-401E-435C-9B70-D1F625DC551A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DB389B50F73DED96964327D67F805090CC6F17E5" : "AntiqueMarket\/",
+    "5D65C2D69E3E7585027C79BE07807FB35BA0D672" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AntiqueMarket",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AntiqueMarket.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/karmaios\/AntiqueMarketMaster.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5D65C2D69E3E7585027C79BE07807FB35BA0D672"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/karmaios\/AntiqueMarket.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DB389B50F73DED96964327D67F805090CC6F17E5"
+    }
+  ]
+}
