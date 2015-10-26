@@ -8,25 +8,28 @@
 
 import UIKit
 
+
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
     //MARK: - - 程序启动时执行
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window    = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor    = UIColor.whiteColor()
         window?.rootViewController = setAMTabbarController()
         window?.makeKeyAndVisible()
+        
         return true
     }
     
     //MARK: - - 设置Tabbar
     func setAMTabbarController()->UITabBarController{
-        let tabbarController = UITabBarController()
+        let myTabbarController = UITabBarController()
         // 设置为不透明
-        tabbarController.tabBar.translucent = false;
+        myTabbarController.tabBar.translucent = false;
+        // 这个也可以设置选中的颜色
 //        tabbarController.tabBar.tintColor = UIColor.redColor();
         // 首页
         let homeVC = AMFirstVC()
@@ -34,10 +37,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let marketVC = AMSecondVC()
         // 个人中心
         let userCenterVC = AMThirdVC()
-        addChildVC(homeVC, childVCTitle: "首页", childVCImageName: "tab_home", childVCSelectedImageName: "tab_home_pre", tabbarController: tabbarController)
-        addChildVC(marketVC, childVCTitle: "艺市", childVCImageName: "tab_shopping", childVCSelectedImageName: "tab_shopping_pre", tabbarController: tabbarController)
-        addChildVC(userCenterVC, childVCTitle: "我的", childVCImageName: "tab_user", childVCSelectedImageName: "tab_user_pre", tabbarController: tabbarController)
-        return tabbarController;
+//        let childVCArray:[UIViewController] = [homeVC,marketVC,userCenterVC]
+//        let childVCTitleArray = ["首页","艺市","我的"]
+//        let childVCImageNameArray = ["tab_home","tab_shopping","tab_user"]
+//        let childVCSelectedImageNameArray = ["tab_home_pre","tab_shopping_pre","tab_user_pre"]
+//        for i in 0 ... childVCArray.count - 1{
+//            addChildVC(childVCArray[i], childVCTitle: childVCTitleArray[i], childVCImageName: childVCImageNameArray[i], childVCSelectedImageName: childVCSelectedImageNameArray[i], tabbarController: myTabbarController)
+//        }
+        
+        addChildVC(homeVC, childVCTitle: "首页", childVCImageName: "tab_home", childVCSelectedImageName: "tab_home_pre", tabbarController: myTabbarController)
+        addChildVC(marketVC, childVCTitle: "艺市", childVCImageName: "tab_shopping", childVCSelectedImageName: "tab_shopping_pre", tabbarController: myTabbarController)
+        addChildVC(userCenterVC, childVCTitle: "我的", childVCImageName: "tab_user", childVCSelectedImageName: "tab_user_pre", tabbarController: myTabbarController)
+        return myTabbarController;
     }
     //MARK: - - 把各个VC布置到tabbarController上
     func addChildVC(childVC:UIViewController,childVCTitle:String,childVCImageName:String,childVCSelectedImageName:String,tabbarController:UITabBarController){
@@ -50,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 设置点击前后的文字颜色
       UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.blackColor()], forState: UIControlState.Normal)
       UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.redColor()], forState: UIControlState.Selected)
-        
+       
 
         tabbarController.addChildViewController(childVC);
         
