@@ -17,11 +17,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window    = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor    = UIColor.whiteColor()
-        window?.rootViewController = ViewController()
+        window?.rootViewController = setAMTabbarController()
         window?.makeKeyAndVisible()
         return true
     }
+    
+    //MARK: - - 设置Tabbar
+    func setAMTabbarController()->UITabBarController{
+        let tabbarController = UITabBarController()
+        // 设置为不透明
+        tabbarController.tabBar.translucent = false;
+//        tabbarController.tabBar.tintColor = UIColor.redColor();
+        // 首页
+        let homeVC = AMFirstVC()
+        // 艺市
+        let marketVC = AMSecondVC()
+        // 个人中心
+        let userCenterVC = AMThirdVC()
+        addChildVC(homeVC, childVCTitle: "首页", childVCImageName: "tab_home", childVCSelectedImageName: "tab_home_pre", tabbarController: tabbarController)
+        addChildVC(marketVC, childVCTitle: "艺市", childVCImageName: "tab_shopping", childVCSelectedImageName: "tab_shopping_pre", tabbarController: tabbarController)
+        addChildVC(userCenterVC, childVCTitle: "我的", childVCImageName: "tab_user", childVCSelectedImageName: "tab_user_pre", tabbarController: tabbarController)
+        return tabbarController;
+    }
+    //MARK: - - 把各个VC布置到tabbarController上
+    func addChildVC(childVC:UIViewController,childVCTitle:String,childVCImageName:String,childVCSelectedImageName:String,tabbarController:UITabBarController){
+        // 设置标题
+        childVC.tabBarItem.title = childVCTitle;
+        // tabbar默认图片
+        childVC.tabBarItem.image = UIImage(named: childVCImageName)
+        // tabbar选中图片
+        childVC.tabBarItem.selectedImage = UIImage(named: childVCSelectedImageName)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        // 设置点击前后的文字颜色
+      UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.blackColor()], forState: UIControlState.Normal)
+      UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.redColor()], forState: UIControlState.Selected)
+        
 
+        tabbarController.addChildViewController(childVC);
+        
+        
+    }
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
