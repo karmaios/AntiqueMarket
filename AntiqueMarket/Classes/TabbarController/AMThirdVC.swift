@@ -8,33 +8,76 @@
 
 import UIKit
 
-class AMThirdVC: UIViewController {
+class AMThirdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        let btn = UIButton(frame: CGRectMake(50, 100, 80, 20))
-        btn.titleLabel?.font  = UIFont.systemFontOfSize(13)
-        btn.setTitle("跳一", forState: UIControlState.Normal)
-        btn.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        btn.addTarget(self, action: Selector("btnClick"), forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(btn)
+        initVCTitleUserPhotoUserNickName()
+        let thirdVCTableView = UITableView(frame: CGRectMake(0, 240, Screen_Width, Screen_Height-100), style: UITableViewStyle.Plain)
+        thirdVCTableView.delegate = self
+        thirdVCTableView.dataSource = self
+        thirdVCTableView.backgroundColor = .yellowColor()
+        thirdVCTableView.scrollEnabled = true
+//        thirdVCTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        thirdVCTableView.separatorInset = UIEdgeInsetsZero
+        self.view.addSubview(thirdVCTableView)
         
-        let btn2 = UIButton(frame: CGRectMake(50, 200, 80, 20))
-        btn2.titleLabel?.font  = UIFont.systemFontOfSize(13)
-        btn2.setTitle("跳二", forState: UIControlState.Normal)
-        btn2.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        btn2.addTarget(self, action: Selector("btn2Click"), forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(btn2)
     }
-    
-    func btnClick(){
-        tabBarController?.selectedIndex = 0
+    //MARK: - - 设置页面标题、头像、用户名
+    func initVCTitleUserPhotoUserNickName(){
+        self.view.backgroundColor = RGBA(0.94, g: 0.94, b: 0.94)
+        
+        let userCenterTitleLable = UILabel()
+        userCenterTitleLable.text = "我的"
+        userCenterTitleLable.font = UIFont.italicSystemFontOfSize(18)
+        userCenterTitleLable.textAlignment = .Center
+        userCenterTitleLable.textColor = RGBA(0.76, g: 0.65, b: 0.36)
+        self.view.addSubview(userCenterTitleLable)
+        userCenterTitleLable.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(40)
+            make.width.height.equalTo(CGSize(width: Screen_Width, height: 30))
+        }
+        
+        let userPhotoImageView = UIImageView()
+        userPhotoImageView.layer.cornerRadius = 50
+        userPhotoImageView.layer.masksToBounds = true
+        userPhotoImageView.layer.borderWidth = 0.2
+        userPhotoImageView.layer.borderColor = UIColor.grayColor().CGColor
+        userPhotoImageView.image = UIImage(named: "me_head_icon")
+        userPhotoImageView.contentMode = .ScaleToFill
+        self.view.addSubview(userPhotoImageView)
+        userPhotoImageView.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(userCenterTitleLable.snp_bottom).offset(10)
+            make.left.equalTo((Screen_Width - 100)/2)
+            make.width.height.equalTo(100)
+        }
+        
+        let userNickNameLabel = UILabel()
+        userNickNameLabel.font = UIFont.systemFontOfSize(11)
+        userNickNameLabel.text = "用户名"
+        userNickNameLabel.textColor = .grayColor()
+        userNickNameLabel.textAlignment = .Center
+        self.view.addSubview(userNickNameLabel)
+        userNickNameLabel.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(userPhotoImageView.snp_bottom).offset(10)
+            make.width.equalTo(Screen_Width)
+            make.width.height.equalTo(CGSize(width: Screen_Width, height: 12))
+        }
     }
-    func btn2Click(){
-        tabBarController?.selectedIndex = 1
+    //
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
-
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 20
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cellID")
+        return cell
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

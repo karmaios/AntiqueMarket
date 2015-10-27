@@ -48,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         addChildVC(homeVC, childVCTitle: "首页", childVCImageName: "tab_home", childVCSelectedImageName: "tab_home_pre", tabbarController: myTabbarController)
         addChildVC(marketVC, childVCTitle: "艺市", childVCImageName: "tab_shopping", childVCSelectedImageName: "tab_shopping_pre", tabbarController: myTabbarController)
         addChildVC(userCenterVC, childVCTitle: "我的", childVCImageName: "tab_user", childVCSelectedImageName: "tab_user_pre", tabbarController: myTabbarController)
+        myTabbarController.selectedIndex = 2
         return myTabbarController;
     }
     //MARK: - - 把各个VC布置到tabbarController上
