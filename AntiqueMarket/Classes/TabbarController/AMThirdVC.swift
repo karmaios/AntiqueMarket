@@ -19,7 +19,7 @@ class AMThirdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         thirdVCTableView.backgroundColor = .yellowColor()
         thirdVCTableView.scrollEnabled = true
 //        thirdVCTableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-//        thirdVCTableView.separatorInset = UIEdgeInsetsMake(0, Screen_Width, 0, Screen_Width)
+        thirdVCTableView.separatorInset = UIEdgeInsetsMake(0, Screen_Width, 0, Screen_Width)
         self.view.addSubview(thirdVCTableView)
         
     }
@@ -82,26 +82,26 @@ class AMThirdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 //        resetSeparatorInsetForCell(cell)
         return cell
     }
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (cell.respondsToSelector(Selector("setSeparatorInset:"))){
-            cell.separatorInset = UIEdgeInsetsZero
-        }
-                if (cell.respondsToSelector(Selector("setLayoutMargins:")))
-                {
-        cell.layoutMargins = UIEdgeInsetsZero
-                }
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if (cell.respondsToSelector(Selector("setSeparatorInset:"))){
+//            cell.separatorInset = UIEdgeInsetsMake(0, 320, 0, 320)
+//        }
+//                if (cell.respondsToSelector(Selector("setLayoutMargins:")))
+//                {
+//        cell.layoutMargins = UIEdgeInsetsZero
+//                }
+//
+//    }
 
-    }
-
-    func resetSeparatorInsetForCell(cell:UITableViewCell){
-        if (cell.respondsToSelector(Selector("setSeparatorInset:"))){
-        cell.separatorInset = UIEdgeInsetsMake(0, Screen_Width, 0, Screen_Width)
-        }
+//    func resetSeparatorInsetForCell(cell:UITableViewCell){
+//        if (cell.respondsToSelector(Selector("setSeparatorInset:"))){
+//        cell.separatorInset = UIEdgeInsetsMake(0, Screen_Width, 0, Screen_Width)
+//        }
 //        if (cell.respondsToSelector(Selector("setLayoutMargins:")))
 //        {
-            cell.layoutMargins = UIEdgeInsetsZero
+//            cell.layoutMargins = UIEdgeInsetsZero
 //        }
-    }
+//    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
