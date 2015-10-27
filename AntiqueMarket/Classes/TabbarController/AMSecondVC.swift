@@ -19,7 +19,10 @@ class AMSecondVC: UIViewController {
         btn.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         btn.addTarget(self, action: Selector("btnClick"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(btn)
-        
+        btn.snp_makeConstraints { (make) -> Void in
+            make.width.height.equalTo(50)
+            make.center.equalTo(self.view)
+        }
         let btn2 = UIButton(frame: CGRectMake(50, 200, 80, 20))
         btn2.titleLabel?.font  = UIFont.systemFontOfSize(13)
         btn2.setTitle("跳我的", forState: UIControlState.Normal)

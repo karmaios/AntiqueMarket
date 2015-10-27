@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import SnapKit
 /*
 判断版本号？不知道是否可以使用...
 */
