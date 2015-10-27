@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BD851402187D7E74683FC710 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2668C2DA88A4351EC5193 /* Pods.framework */; };
 		BF0FD8D01BDF529F00AA58F0 /* me_head_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0FD8CF1BDF529F00AA58F0 /* me_head_icon@2x.png */; };
+		BF0FD8D21BDF7B1600AA58F0 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0FD8D11BDF7B1600AA58F0 /* Reveal.framework */; };
 		BF2C6CAA1BDDB8C200286AC7 /* tab_home_pre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2C6CA41BDDB8C200286AC7 /* tab_home_pre@2x.png */; };
 		BF2C6CAB1BDDB8C200286AC7 /* tab_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2C6CA51BDDB8C200286AC7 /* tab_home@2x.png */; };
 		BF2C6CAC1BDDB8C200286AC7 /* tab_shopping_pre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2C6CA61BDDB8C200286AC7 /* tab_shopping_pre@2x.png */; };
@@ -50,6 +51,7 @@
 		36A9F826E639170BA17CF6B4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A6E2668C2DA88A4351EC5193 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0FD8CF1BDF529F00AA58F0 /* me_head_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_head_icon@2x.png"; sourceTree = "<group>"; };
+		BF0FD8D11BDF7B1600AA58F0 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		BF2C6CA41BDDB8C200286AC7 /* tab_home_pre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_home_pre@2x.png"; sourceTree = "<group>"; };
 		BF2C6CA51BDDB8C200286AC7 /* tab_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_home@2x.png"; sourceTree = "<group>"; };
 		BF2C6CA61BDDB8C200286AC7 /* tab_shopping_pre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_shopping_pre@2x.png"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD851402187D7E74683FC710 /* Pods.framework in Frameworks */,
+				BF0FD8D21BDF7B1600AA58F0 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +174,7 @@
 		BF2C6CA21BDDB44E00286AC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF0FD8D11BDF7B1600AA58F0 /* Reveal.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -563,9 +567,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AntiqueMarket/Frameworks",
+				);
 				INFOPLIST_FILE = AntiqueMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SnapKit\"",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.super.AntiqueMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -578,9 +595,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AntiqueMarket/Frameworks",
+				);
 				INFOPLIST_FILE = AntiqueMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SnapKit\"",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.super.AntiqueMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
