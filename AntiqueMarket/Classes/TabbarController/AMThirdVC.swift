@@ -18,8 +18,8 @@ class AMThirdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         thirdVCTableView.dataSource = self
         thirdVCTableView.backgroundColor = .yellowColor()
         thirdVCTableView.scrollEnabled = true
-//        thirdVCTableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        thirdVCTableView.separatorInset = UIEdgeInsetsZero
+//        thirdVCTableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+//        thirdVCTableView.separatorInset = UIEdgeInsetsMake(0, Screen_Width, 0, Screen_Width)
         self.view.addSubview(thirdVCTableView)
         
     }
@@ -66,17 +66,41 @@ class AMThirdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     //
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
+    }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 20
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cellID")
+//        resetSeparatorInsetForCell(cell)
         return cell
+    }
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (cell.respondsToSelector(Selector("setSeparatorInset:"))){
+            cell.separatorInset = UIEdgeInsetsZero
+        }
+                if (cell.respondsToSelector(Selector("setLayoutMargins:")))
+                {
+        cell.layoutMargins = UIEdgeInsetsZero
+                }
+
+    }
+
+    func resetSeparatorInsetForCell(cell:UITableViewCell){
+        if (cell.respondsToSelector(Selector("setSeparatorInset:"))){
+        cell.separatorInset = UIEdgeInsetsMake(0, Screen_Width, 0, Screen_Width)
+        }
+//        if (cell.respondsToSelector(Selector("setLayoutMargins:")))
+//        {
+            cell.layoutMargins = UIEdgeInsetsZero
+//        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
