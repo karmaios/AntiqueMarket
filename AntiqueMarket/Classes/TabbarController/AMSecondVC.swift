@@ -8,11 +8,20 @@
 
 import UIKit
 
-class AMSecondVC: UIViewController {
+class AMSecondVC: UIViewController,UIWebViewDelegate {
 
+    let myTxt = UITextField()
     override func viewDidLoad() {
         
         super.viewDidLoad()
+
+
+        
+    }
+
+    
+    
+    private func initSomeBtn(){
         let btn = UIButton(frame: CGRectMake(50, 100, 80, 20))
         btn.titleLabel?.font  = UIFont.systemFontOfSize(13)
         btn.setTitle("跳首页", forState: UIControlState.Normal)
@@ -29,13 +38,18 @@ class AMSecondVC: UIViewController {
         btn2.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         btn2.addTarget(self, action: Selector("btn2Click"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(btn2)
-        
     }
     func btnClick(){
         tabBarController?.selectedIndex = 0
     }
     func btn2Click(){
         tabBarController?.selectedIndex = 2
+    }
+    func initSomeWeb(){
+        let gifWeb:UIWebView = UIWebView(frame: CGRectMake(0,0,Screen_Width,200))
+        gifWeb.loadRequest(NSURLRequest(URL: NSURL(string: "http://img4.imgtn.bdimg.com/it/u=2634110199,3755282201&fm=21&gp=0.jpg")!))
+        gifWeb.delegate = self
+        self.view.addSubview(gifWeb)
     }
     
     override func didReceiveMemoryWarning() {
