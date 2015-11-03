@@ -11,7 +11,7 @@ import UIKit
 class AMThirdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var listArray:NSArray?
     let cellReuseIdentifier = "userCenterCellReuseIdentifier"
-
+    var  thirdVCTableView:UITableView?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,13 +25,14 @@ class AMThirdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         // 界面标题
         let userCenterTitleLable = UILabel()
         userCenterTitleLable.text = "我的"
-        userCenterTitleLable.font = UIFont.italicSystemFontOfSize(18)
+        userCenterTitleLable.adjustsFontSizeToFitWidth = true
         userCenterTitleLable.textAlignment = .Center
-        userCenterTitleLable.textColor = RGBA(0.76, g: 0.65, b: 0.36)
+        userCenterTitleLable.textColor = RGBA(0.62, g: 0.53, b: 0.22)
         self.view.addSubview(userCenterTitleLable)
         userCenterTitleLable.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(40)
-            make.width.height.equalTo(CGSize(width: Screen_Width, height: 30))
+            make.top.equalTo(27)
+            make.left.equalTo(Screen_Width/2 - 40)
+            make.width.height.equalTo(CGSize(width: 80, height: 30))
         }
         // 用户头像
         let userPhotoImageView = UIImageView()
@@ -63,11 +64,11 @@ class AMThirdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     //MARK: - - 设置tableview
     func initUserCenterTableView(){
         listArray = [[["me_icon_1","me_icon_6"],["me_icon_4","me_icon_3"],["me_icon_2","me_icon_5"]],[["提现账户","我的买单"],["素材管理","微信分享"],["使用帮助","关于我们"]]]
-        let thirdVCTableView = UITableView(frame: CGRectMake(0, 210, Screen_Width,Screen_Height - 210 - 49), style: .Plain)
-        thirdVCTableView.delegate = self
-        thirdVCTableView.dataSource = self
-        thirdVCTableView.separatorStyle = .None
-        self.view.addSubview(thirdVCTableView)
+        thirdVCTableView = UITableView(frame: CGRectMake(0, 210, Screen_Width,Screen_Height - 210 - 49), style: .Plain)
+        thirdVCTableView!.delegate = self
+        thirdVCTableView!.dataSource = self
+        thirdVCTableView!.separatorStyle = .None
+        self.view.addSubview(thirdVCTableView!)
     }
     //MARK: - - Section个数
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -119,6 +120,7 @@ class AMThirdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             case 0:
                 print("素材管理")
             case 1:
+                share()
                 print("微信分享")
             default:
                 break
@@ -128,7 +130,8 @@ class AMThirdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             case 0:
                 print("使用帮助")
             case 1:
-                print("关于我们")
+                let vc = AMAboutUSVC()
+                self.navigationController?.pushViewController(vc, animated: false)
             default:
                 break
             }
@@ -137,11 +140,35 @@ class AMThirdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
     }
 
+    func share(){
+        // 1.创建分享参数
+        let shareParames = NSMutableDictionary()
+        
+        shareParames.SSDKSetupShareParamsByText("This is my First App.",
+            images : UIImage(named: "114.png"),
+            url : NSURL(string:"http://mob.com"),
+            title : "Hello",
+            type : SSDKContentType.Text)
+        
+        //2.进行分享
+        ShareSDK.share(SSDKPlatformType.TypeWechat, parameters: shareParames) { (state : SSDKResponseState, userData : [NSObject : AnyObject]!, contentEntity :SSDKContentEntity!, error : NSError!) -> Void in
+            self.thirdVCTableView?.reloadData()
 
+            switch state{
+                
+            case SSDKResponseState.Success:
+                print("分享成功")
+                let alert = UIAlertView(title: "分享成功", message: "分享成功", delegate: self, cancelButtonTitle: "取消")
+                alert.show()
+            case SSDKResponseState.Fail:    print("分享失败,错误描述:\(error)")
 
+            case SSDKResponseState.Cancel:  print("分享取消")
+            default:
+                break
+            }
+        }
 
-
-
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

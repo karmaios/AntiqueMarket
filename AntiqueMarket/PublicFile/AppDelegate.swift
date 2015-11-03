@@ -16,14 +16,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     //MARK: - - 程序启动时执行
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         window    = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor    = UIColor.whiteColor()
-        window?.rootViewController = setAMTabbarController()
+        let nv = UINavigationController(rootViewController: setAMTabbarController())
+        window?.rootViewController = nv
+        // 设置导航条完全透明
+//        nv.navigationBar.translucent = false;
+        // 隐藏导航条
+        nv.navigationBar.hidden = true
         window?.makeKeyAndVisible()
-        
+        setShare()
         return true
     }
-    
+    //MARK: - - 设置分享
+    func setShare(){
+        ShareSDK.registerApp("bb9a86386e58",activePlatforms:[SSDKPlatformType.TypeWechat.rawValue],
+            onImport: {(platform : SSDKPlatformType) -> Void in
+                switch platform{
+                case SSDKPlatformType.TypeWechat:
+                    ShareSDKConnector.connectWeChat(WXApi.classForCoder())
+                 default:
+                    break
+                }
+            },
+            onConfiguration: {(platform : SSDKPlatformType,appInfo : NSMutableDictionary!) -> Void in
+                switch platform {
+                case SSDKPlatformType.TypeWechat:
+                    //设置微信应用信息
+                    appInfo.SSDKSetupWeChatByAppId("wx54ea75bdb243a554", appSecret: "d4624c36b6795d1d99dcf0547af5443d")
+                    break
+                default:
+                    break
+                    
+                }
+        })
+    }
     //MARK: - - 设置Tabbar
     func setAMTabbarController()->UITabBarController{
         let myTabbarController = UITabBarController()
@@ -48,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         addChildVC(homeVC, childVCTitle: "首页", childVCImageName: "tab_home", childVCSelectedImageName: "tab_home_pre", tabbarController: myTabbarController)
         addChildVC(marketVC, childVCTitle: "艺市", childVCImageName: "tab_shopping", childVCSelectedImageName: "tab_shopping_pre", tabbarController: myTabbarController)
         addChildVC(userCenterVC, childVCTitle: "我的", childVCImageName: "tab_user", childVCSelectedImageName: "tab_user_pre", tabbarController: myTabbarController)
-        myTabbarController.selectedIndex = 2
+        myTabbarController.selectedIndex = 1
         return myTabbarController;
     }
     //MARK: - - 把各个VC布置到tabbarController上

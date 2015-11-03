@@ -16,6 +16,7 @@ class CustomImageLabelBtnGroupView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initImageViewLabelBtn()
+    
     }
 
     required init?(coder aDecoder: NSCoder) {
